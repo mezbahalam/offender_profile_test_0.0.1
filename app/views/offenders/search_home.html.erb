@@ -1,0 +1,15 @@
+<br />
+<br />
+<br />
+<div id="matrix">Offender Profile</div>
+<br />
+
+<%= search_form_for @search, url: search_offenders_path, method: :post do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c  %>
+  <% end %>
+  <p class="add_condition"><%=  link_to_add_fields "Add condition", f, :condition %></p>
+  <br />
+  <br />
+  <div class="action"><%= f.submit "Search" %></div>
+<% end %>

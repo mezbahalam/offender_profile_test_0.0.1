@@ -1,0 +1,51 @@
+<div class="show_margin">
+<%- model_class = Offender -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @offender.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>
+  <dd><%= @offender.gender %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:age) %>:</strong></dt>
+  <dd><%= @offender.age %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @offender.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mobile_no) %>:</strong></dt>
+  <dd><%= @offender.mobile_no %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:occupation) %>:</strong></dt>
+  <dd><%= @offender.occupation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:religion) %>:</strong></dt>
+  <dd><%= @offender.religion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:educational_background) %>:</strong></dt>
+  <dd><%= @offender.educational_background %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:crimes) %>:</strong></dt>
+  <dd><%= @offender.crimes %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:father_name) %>:</strong></dt>
+  <dd><%= @offender.father_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mother_name) %>:</strong></dt>
+  <dd><%= @offender.mother_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:father_occupation) %>:</strong></dt>
+  <dd><%= @offender.father_occupation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mother_occupation) %>:</strong></dt>
+  <dd><%= @offender.mother_occupation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:family_income) %>:</strong></dt>
+  <dd><%= @offender.family_income %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:psychological_status) %>:</strong></dt>
+  <dd><%= @offender.psychological_status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dd><%= image_tag(@offender.image_url, :width => 250) if @offender.image.present? %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              offenders_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_offender_path(@offender), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              offender_path(@offender),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,136 @@
+<%= form_for @offender, :html => { :class => "form-horizontal offender", multipart: true } do |f| %>
+
+    <% if @offender.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@offender.errors.count, "error") %> prohibited this offender from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @offender.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= @offender[:name] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :gender, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :gender, :class => 'form-control' %>
+    </div>
+    <%= @offender[:gender] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :age, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :age, :class => 'form-control' %>
+    </div>
+    <%= @offender[:age] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address, :class => 'form-control' %>
+    </div>
+    <%= @offender[:address] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :mobile_no, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mobile_no, :class => 'form-control' %>
+    </div>
+    <%= @offender[:mobile_no] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :occupation, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :occupation, :class => 'form-control' %>
+    </div>
+    <%= @offender[:occupation] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :religion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :religion, :class => 'form-control' %>
+    </div>
+    <%= @offender[:religion] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :educational_background, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :educational_background, :class => 'form-control' %>
+    </div>
+    <%= @offender[:educational_background] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :crimes, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :crimes, :class => 'form-control' %>
+    </div>
+    <%= @offender[:crimes] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :father_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :father_name, :class => 'form-control' %>
+    </div>
+    <%= @offender[:father_name] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :mother_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mother_name, :class => 'form-control' %>
+    </div>
+    <%= @offender[:mother_name] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :father_occupation, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :father_occupation, :class => 'form-control' %>
+    </div>
+    <%= @offender[:father_occupation] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :mother_occupation, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mother_occupation, :class => 'form-control' %>
+    </div>
+    <%= @offender[:mother_occupation] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :family_income, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :family_income, :class => 'form-control' %>
+    </div>
+    <%= @offender[:family_income] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :psychological_status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :psychological_status, :class => 'form-control' %>
+    </div>
+    <%= @offender[:psychological_status] %>
+  </div>
+  <div class="control-group">
+    <%= f.label :image, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :image, :class => 'form-control' %>
+    </div>
+    <%= @offender[:image] %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            offenders_path, :class => 'btn btn-default' %>
+
+<% end %>
